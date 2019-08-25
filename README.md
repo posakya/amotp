@@ -1,16 +1,39 @@
       # amotp
+      
+	      Step 1. Add the JitPack repository to your build file
 
-      public class MainActivity extends AppCompatActivity {
+	      Add it in your root build.gradle at the end of repositories:
 
-          String x1 = "12";
-          String x2 = "100";
+		    allprojects {
+			  repositories {
+				...
+				maven { url 'https://www.jitpack.io' }
+			  }
+		    }
+		    
+		    
+	    
+	    
+	      Step 2. Add the dependency
 
-          @Override
-          protected void onCreate(Bundle savedInstanceState) {
-              super.onCreate(savedInstanceState);
-              setContentView(R.layout.activity_main);
+		dependencies {
+			implementation 'com.github.posakya:amotp:0.1'
+		}
+		
+		
+		
 
-              System.out.println(Calculate.doCalcualtion(Operator.SUBTRACTION,x1,x2));
+	      public class MainActivity extends AppCompatActivity {
 
-          }
-      }
+		  String x1 = "12";
+		  String x2 = "100";
+
+		  @Override
+		  protected void onCreate(Bundle savedInstanceState) {
+		      super.onCreate(savedInstanceState);
+		      setContentView(R.layout.activity_main);
+
+		      System.out.println(Calculate.doCalcualtion(Operator.SUBTRACTION,x1,x2));
+
+		  }
+	      }
